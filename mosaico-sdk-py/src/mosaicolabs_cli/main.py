@@ -3,6 +3,7 @@ from typing import Optional
 import typer
 
 from mosaicolabs_cli.commands import (
+    examples,
     extension,
     extract,
     inject,
@@ -66,6 +67,7 @@ app.add_typer(
     name="extract",
     help="Extract sequences from Mosaico as ROS bags or MCAP files.",
 )
+app.add_typer(examples.app, name="examples", help="Run official SDK examples.")
 app.add_typer(
     extension.app,
     name="extension",

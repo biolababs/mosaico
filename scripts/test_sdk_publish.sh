@@ -49,7 +49,7 @@ run_local_tests() {
             echo -e "${GREEN}Verifying CLI scripts...${NC}"
             "$VENV_NAME/bin/python" -c 'import mosaicolabs, mosaicolabs_cli'
             "$VENV_NAME/bin/mosaico" --help > /dev/null
-            "$VENV_NAME/bin/mosaicolabs.examples" --help > /dev/null
+            "$VENV_NAME/bin/mosaico" examples --help > /dev/null
             "$VENV_NAME/bin/mosaicolabs.ros_injector" --help > /dev/null
             echo -e "${GREEN}Python $VER: LOCAL SUCCESS${NC}"
         else
@@ -130,7 +130,7 @@ run_remote_tests() {
             
             "$VENV_NAME/bin/python" -c 'import mosaicolabs, mosaicolabs_cli'
             "$VENV_NAME/bin/mosaico" --help > /dev/null
-            "$VENV_NAME/bin/mosaicolabs.examples" --help > /dev/null
+            "$VENV_NAME/bin/mosaico" examples --help > /dev/null
             "$VENV_NAME/bin/mosaicolabs.ros_injector" --help > /dev/null
             echo -e "${GREEN}Python $VER: REMOTE SUCCESS${NC}"
         else

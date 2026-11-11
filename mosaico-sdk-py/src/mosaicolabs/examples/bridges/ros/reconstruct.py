@@ -11,6 +11,7 @@ from mosaicolabs.examples.config import (
     LOG_LEVEL,
     MOSAICO_HOST,
     MOSAICO_PORT,
+    TLS_CERT_PATH,
 )
 
 BAG_FILE_PATH = Path(ASSET_DIR) / "reconstructed"
@@ -40,7 +41,7 @@ def main():
             # topics=["*odom*"],
             log_level=LOG_LEVEL,
             mosaico_api_key=API_KEY,
-            # tls_cert_path=,
+            tls_cert_path=TLS_CERT_PATH,
             enable_tls=ENABLE_TLS,
             # start_timestamp_ns=,
             # end_timestamp_ns=,

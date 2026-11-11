@@ -12,7 +12,7 @@ This script demonstrates a complete workflow:
 Run the example via:
 ```bash
 
-mosaicolabs.examples mujoco_vis
+mosaico examples mujoco_vis
 
 ```
 """
@@ -36,6 +36,7 @@ from .config import (
     ENABLE_TLS,
     MOSAICO_HOST,
     MOSAICO_PORT,
+    TLS_CERT_PATH,
 )
 
 # Initialize Rich Console for beautiful terminal output
@@ -138,6 +139,7 @@ def main():
         host=MOSAICO_HOST,
         port=MOSAICO_PORT,
         enable_tls=ENABLE_TLS,
+        tls_cert_path=TLS_CERT_PATH,
         api_key=API_KEY,
     ) as client:
         result = client.query(

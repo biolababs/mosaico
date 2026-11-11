@@ -4,12 +4,12 @@ This example can be run after running the ingestion example (examples/bridges/ro
 
 Ingest data via:
 ```bash
-cd mosaico-sdk-py && uv run --locked --extra cli mosaicolabs.examples ros_injection
+cd mosaico-sdk-py && uv run --locked --extra cli mosaico examples ros_injection
 ```
 
 Then, list sequences via:
 ```bash
-uv run --locked --extra cli mosaicolabs.examples data_inspection
+uv run --locked --extra cli mosaico examples data_inspection
 ```
 """
 
@@ -20,7 +20,7 @@ from rich.table import Table
 # Mosaico SDK Imports
 from mosaicolabs import MosaicoClient
 
-from .config import API_KEY, ENABLE_TLS, MOSAICO_HOST, MOSAICO_PORT
+from .config import API_KEY, ENABLE_TLS, MOSAICO_HOST, MOSAICO_PORT, TLS_CERT_PATH
 
 # Initialize Rich Console for beautiful terminal output
 console = Console()
@@ -34,6 +34,7 @@ def main():
         host=MOSAICO_HOST,
         port=MOSAICO_PORT,
         enable_tls=ENABLE_TLS,
+        tls_cert_path=TLS_CERT_PATH,
         api_key=API_KEY,
     ) as client:
         seq_list = client.list_sequences()

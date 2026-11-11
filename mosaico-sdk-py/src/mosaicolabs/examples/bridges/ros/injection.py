@@ -11,7 +11,7 @@ This script demonstrates a complete workflow:
 
 Run the example via:
 ```bash
-cd mosaico-sdk-py && uv run --locked --extra cli mosaicolabs.examples ros_injection
+cd mosaico-sdk-py && uv run --locked --extra cli mosaico examples ros_injection
 ```
 """
 
@@ -35,6 +35,7 @@ from ...config import (
     LOG_LEVEL,
     MOSAICO_HOST,
     MOSAICO_PORT,
+    TLS_CERT_PATH,
 )
 from ..helpers import download_asset
 
@@ -82,6 +83,7 @@ def main():
             host=MOSAICO_HOST,
             port=MOSAICO_PORT,
             enable_tls=ENABLE_TLS,
+            tls_cert_path=TLS_CERT_PATH,
             mosaico_api_key=API_KEY,
             file_path=out_bag_file,
             sequence_name=out_bag_file.stem,  # Sequence name derived from filename
@@ -116,6 +118,7 @@ def main():
         host=MOSAICO_HOST,
         port=MOSAICO_PORT,
         enable_tls=ENABLE_TLS,
+        tls_cert_path=TLS_CERT_PATH,
         api_key=API_KEY,
     ) as client:
         seq_list = client.list_sequences()

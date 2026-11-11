@@ -4,12 +4,12 @@ This example can be run after running the ingestion example (examples/bridges/ro
 
 Ingest data via:
 ```bash
-cd mosaico-sdk-py && uv run --locked --extra cli mosaicolabs.examples ros_injection
+cd mosaico-sdk-py && uv run --locked --extra cli mosaico examples ros_injection
 ```
 
 Then, query catalogs via:
 ```bash
-uv run --locked --extra cli mosaicolabs.examples query_catalogs
+uv run --locked --extra cli mosaico examples query_catalogs
 ```
 
 """
@@ -25,7 +25,7 @@ from mosaicolabs import (
     QueryTopic,
 )
 
-from .config import API_KEY, ENABLE_TLS, MOSAICO_HOST, MOSAICO_PORT
+from .config import API_KEY, ENABLE_TLS, MOSAICO_HOST, MOSAICO_PORT, TLS_CERT_PATH
 
 # Initialize Rich Console for beautiful terminal output
 console = Console()
@@ -135,6 +135,7 @@ def main():
         host=MOSAICO_HOST,
         port=MOSAICO_PORT,
         enable_tls=ENABLE_TLS,
+        tls_cert_path=TLS_CERT_PATH,
         api_key=API_KEY,
     ) as client:
         # Example 1
